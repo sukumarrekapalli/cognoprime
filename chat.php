@@ -2,14 +2,27 @@
 <link type="text/css" rel="stylesheet" href="./chat_style.css" />
 <script type="text/javascript" id="conversational-form-development" src="./node_modules/conversational-form/dist/conversational-form.min.js" crossorigin></script>
 
-
+<?php
+include 'config.php';
+$query = "select * from questions_table";
+$result=mysqli_query($dbconnect,$query);
+$table = $result->fetch_array();
+//echo print_r($table);
+?>
 
 <form id="form">
+
+<?php
+if($table[1]=="openspace")
+{
+  ?>
   <fieldset>
     <label for="name">What's your name?</label>
-    <input required cf-questions="Hi there! What's your name? 😊" type="text" class="form-control" name="name" id="name" />
+    <input required cf-questions="<?php echo $table[2]; ?>" type="text" class="form-control" name="name" id="name" />
   </fieldset>
-
+<?php 
+} 
+?>
   <fieldset>
     <label for="occupation">Occupation</label>
     <div class="radio">
