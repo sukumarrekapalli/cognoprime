@@ -3,13 +3,13 @@
 <script type="text/javascript" id="conversational-form-development" src="./node_modules/conversational-form/dist/conversational-form.min.js" crossorigin></script>
 
 <?php
-
+include 'config.php';
 
 $link = $_SERVER['REQUEST_URI'];
 $link_array = explode('/', $link);
 $code = end($link_array);
 echo $code;
-include 'config.php';
+
 $query = "select * from questions_table";
 $result=mysqli_query($dbconnect,$query);
 $table = $result->fetch_array();
