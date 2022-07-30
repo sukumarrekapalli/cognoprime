@@ -13,17 +13,16 @@ Visual Dashboard  | Epic 3       | To be planned
 3. Add test bed - Done 27th july, 2022.
 4. Add  question from db to chat interface - Done 27th july, 2022.
 5. Wrote all backend operations to fetch questions with questions type in test_bed.php - Done 28th july, 2022.
-6. Write functions to access each operation
+6. Write functions to access each operation -Done 29th july
+7. Output questions to chat interface - Done 30th july
+8. Add all types of question code from cf - Done 30th july
+
 ----------------InProgress------------
  NA
-
-
+9. Filter questions based on question type and apply it to relevant code.
 
 ----------------To be done---------------  
-7. Output questions to chat interface
-8. Add all types of question code from cf
-9. Filter questions based on question type and apply it to relevant code.
-10. submit and feed response to the backend 
+10. submit and feed response to the backend (options backend challenge to be solved)
 
 
 
