@@ -7,7 +7,7 @@ include 'config.php';
 include 'functions.php';
 ?>
 
-<form id="form">
+<form id="form" action="./collect_response.php">
 
 <?php
 if(isset($_POST['code'])){
@@ -38,12 +38,15 @@ for($i=0;$i<$NOQ;$i++){
   elseif($question_type == "MCQ"){
   ?>
     <fieldset>
-    
     <select cf-questions="<?php echo $question; ?>" name="opinion" id="opinion" class="form-control">
-      <option></option>
-      <option>Definitely</option>
-      <option>Maybe</option>
-      <option>No</option>
+      <?php
+      if ($qarray['options'] != NULL )
+      {
+        $options_array = explode( ",",$qarray ['options']);
+        foreach($options_array as $option)
+        echo "<option>".$option."</option>";
+      }
+      ?>
     </select>
     </fieldset>
   <?php

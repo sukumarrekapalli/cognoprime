@@ -20,9 +20,10 @@ Visual Dashboard  | Epic 3       | To be planned
 ----------------InProgress------------
  NA
 9. Filter questions based on question type and apply it to relevant code.
+10. submit and feed response to the backend (options backend challenge to be solved)
 
 ----------------To be done---------------  
-10. submit and feed response to the backend (options backend challenge to be solved)
+NA
 
 
 

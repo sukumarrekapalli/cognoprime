@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2022 at 09:18 PM
+-- Generation Time: Jul 31, 2022 at 08:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -30,18 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `questions_table` (
   `question_id` int(100) NOT NULL,
   `question_type` varchar(100) DEFAULT NULL,
-  `question` varchar(100) NOT NULL
+  `question` varchar(100) NOT NULL,
+  `options` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `questions_table`
 --
 
-INSERT INTO `questions_table` (`question_id`, `question_type`, `question`) VALUES
-(1, 'openspace', 'Who are you?'),
-(2, 'openspace', 'What is your name?'),
-(3, 'openspace', 'third question'),
-(4, 'MCQ', 'fourth question');
+INSERT INTO `questions_table` (`question_id`, `question_type`, `question`, `options`) VALUES
+(1, 'openspace', 'Who are you?', NULL),
+(2, 'openspace', 'What is your name?', NULL),
+(3, 'openspace', 'third question', NULL),
+(4, 'MCQ', 'fourth question', 'Option A, option B, Option C , test option');
 
 -- --------------------------------------------------------
 
@@ -60,8 +61,9 @@ CREATE TABLE `survey_codes_table` (
 --
 
 INSERT INTO `survey_codes_table` (`survey_code_id`, `survey_code`, `survey_id`) VALUES
-(1, 'abcdef', 1),
-(2, 'abcifd', 1);
+(1, 'abcdef', 3),
+(2, 'abcifd', 1),
+(3, 'test', 3);
 
 -- --------------------------------------------------------
 
@@ -81,7 +83,8 @@ CREATE TABLE `survey_table` (
 
 INSERT INTO `survey_table` (`survey_id`, `survey_questions`, `survey_status`) VALUES
 (1, '1,2', 'active'),
-(2, '2,3,4', 'active');
+(2, '2,3,4', 'active'),
+(3, '1,2,3,4', 'active');
 
 --
 -- Indexes for dumped tables
@@ -119,13 +122,13 @@ ALTER TABLE `questions_table`
 -- AUTO_INCREMENT for table `survey_codes_table`
 --
 ALTER TABLE `survey_codes_table`
-  MODIFY `survey_code_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `survey_code_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `survey_table`
 --
 ALTER TABLE `survey_table`
-  MODIFY `survey_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `survey_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
