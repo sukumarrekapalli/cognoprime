@@ -16,11 +16,12 @@ Visual Dashboard  | Epic 3       | To be planned
 6. Write functions to access each operation -Done 29th july
 7. Output questions to chat interface - Done 30th july
 8. Add all types of question code from cf - Done 30th july
-
-----------------InProgress------------
  NA
 9. Filter questions based on question type and apply it to relevant code.
 10. submit and feed response to the backend (options backend challenge to be solved)
+
+----------------InProgress------------
+NA
 
 ----------------To be done---------------  
 NA
