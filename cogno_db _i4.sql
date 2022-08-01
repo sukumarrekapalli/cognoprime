@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2022 at 08:17 PM
+-- Generation Time: Aug 01, 2022 at 08:49 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -43,6 +43,33 @@ INSERT INTO `questions_table` (`question_id`, `question_type`, `question`, `opti
 (2, 'openspace', 'What is your name?', NULL),
 (3, 'openspace', 'third question', NULL),
 (4, 'MCQ', 'fourth question', 'Option A, option B, Option C , test option');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `response_table`
+--
+
+CREATE TABLE `response_table` (
+  `survey_link` varchar(100) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  `answer` varchar(100) NOT NULL,
+  `survey_id` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `response_table`
+--
+
+INSERT INTO `response_table` (`survey_link`, `question`, `answer`, `survey_id`) VALUES
+('abcdef', 'name', 'kjv', 3),
+('abcdef', 'opinion', 'option B', 3),
+('abcdef', 'name', 'kjvasd', 3),
+('abcdef', 'opinion', 'Option C', 3),
+('abcdef', 'Who_are_you?', 'adsrgh', 3),
+('abcdef', 'What_is_your_name?', 'kgku', 3),
+('abcdef', 'third_question', 'kjb', 3),
+('abcdef', 'fourth_question', 'test option', 3);
 
 -- --------------------------------------------------------
 

@@ -7,14 +7,15 @@ include 'config.php';
 include 'functions.php';
 ?>
 
-<form id="form" action="./collect_response.php">
+<form id="form" method="post" action="./collect_response.php">
 
 <?php
 if(isset($_POST['code'])){
   $code = $_POST['code'];
 }
 $questions_list = getQuestionsList($code);
-print_r(getQuestion(1));
+$survey_id = getSurveyId($code);
+//print_r(getQuestion(1));
 
 $NOQ=sizeof($questions_list);
 echo $NOQ;
@@ -30,15 +31,15 @@ for($i=0;$i<$NOQ;$i++){
   if($question_type =="openspace"){
     ?>
     <fieldset>
-      <label for="name">What's your name?</label>
-      <input required cf-questions="<?php echo $question; ?>" type="text" class="form-control" name="name" id="name" />
+      <!-- <label for="name">What's your name?</label> -->
+      <input required cf-questions="<?php echo $question; ?>" type="text" class="form-control" name="<?php echo $question; ?>"  />
     </fieldset>
   <?php 
   }
   elseif($question_type == "MCQ"){
   ?>
     <fieldset>
-    <select cf-questions="<?php echo $question; ?>" name="opinion" id="opinion" class="form-control">
+    <select cf-questions="<?php echo $question; ?>" name="<?php echo $question; ?>"  class="form-control">
       <?php
       if ($qarray['options'] != NULL )
       {
@@ -53,6 +54,9 @@ for($i=0;$i<$NOQ;$i++){
   }
 }
 ?>
+<input name="survey_code" value="<?php echo $code; ?>" style="display:none;"/>
+<input name="survey_id" value="<?php echo $survey_id; ?>" style="display:none;"/>
+
 <button type="submit" class="btn btn-default">Submit</button>
 </form>
 <div id="cf-context" class="dark-theme" role="cf-context" cf-context></div>

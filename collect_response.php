@@ -56,12 +56,12 @@ function filtercode($responses){
 }
     $question='';
     $surveycode='';
-    $project_id='';
+    $survey_id='';
     // if(isset($_POST['question_list'])){
     //   $question= $_POST['question_list'];
     // }
     if(isset($_POST['survey_id'])){
-      $project_id = $_POST['survey_id'];
+      $survey_id = $_POST['survey_id'];
     }
         if(isset($_POST['survey_code'])){
       $surveycode = $_POST['survey_code'];
@@ -85,7 +85,7 @@ function filtercode($responses){
 
     $val = filtercode($val);
     $val = mysqli_real_escape_string($dbconnect, $val);
-         $sql="INSERT INTO response_table(Survey_link, Questions, Answers, Project_id) VALUES ('$surveycode','$key','$val','$project_id')";
+         $sql="INSERT INTO response_table(survey_link, question, answer, survey_id) VALUES ('$surveycode','$key','$val','$survey_id')";
  $run=mysqli_query($dbconnect,$sql);
     }
     }  
@@ -105,8 +105,8 @@ function filtercode($responses){
 
   <!--<img src="./Presentation1.jpg" alt="thankyou" height="auto" width="80%"  max-width="80%">-->
   <div class="center">
-    <img src="./assets/images/done.gif" height="250px" />
-    <h2 style="color:#339fd9; text-align:center; font-size:20px;"> Thank you!<br>
+    <img src="./assets/Thanks.gif" height="250px" />
+  
 
   </div>
 
